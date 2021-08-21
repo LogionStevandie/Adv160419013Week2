@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_game.*
+import kotlinx.android.synthetic.main.fragment_result.*
+import kotlin.random.Random
 
 
 class ResultFragment : Fragment() {
@@ -15,4 +19,17 @@ class ResultFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_result, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (arguments != null){
+            var point = ResultFragmentArgs.fromBundle(requireArguments()).point
+            txtTurn.text = "Your score is $point"
+        }
+
+        btnBack.setOnClickListener {
+            val action = ResultFragmentDirections.actionMainFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+    }
 }
