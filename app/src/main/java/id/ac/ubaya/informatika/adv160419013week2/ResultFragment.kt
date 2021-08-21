@@ -24,7 +24,7 @@ class ResultFragment : Fragment() {
 
         if (arguments != null){
             var point = ResultFragmentArgs.fromBundle(requireArguments()).point
-            txtTurn.text = "Your score is $point"
+            txtScore.text = "Your score is $point"
         }
 
         btnBack.setOnClickListener {

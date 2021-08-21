@@ -41,6 +41,7 @@ class GameFragment : Fragment() {
                     nilai1 = Random.nextInt(1, 100)
                     nilai2 = Random.nextInt(1, 100)
                     txtQuestion.text = "$nilai1 + $nilai2"
+                    txtAnswer.setText("0")
                 }
                 else{
                     val action = GameFragmentDirections.actionResultFragment(point)
