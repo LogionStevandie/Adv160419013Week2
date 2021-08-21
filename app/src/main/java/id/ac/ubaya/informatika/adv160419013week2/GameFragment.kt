@@ -24,7 +24,7 @@ class GameFragment : Fragment() {
             txtTurn.text = "$playerName's Turn"
         }
 
-        btnBack.setOnClickListener {
+        btnSubmit.setOnClickListener {
             val action = GameFragmentDirections.actionMainFragment()
             Navigation.findNavController(it).navigate(action)
         }
